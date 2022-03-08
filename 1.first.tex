@@ -1,0 +1,54 @@
+% \documentclass[a4paper,12pt,landscape,twocolumn]{book}
+\documentclass[a4paper,12pt]{book}
+\usepackage[a4paper,inner=1.7cm,outer=2.7cm,top=2cm, bottom=2cm,bindingoffset=1.2cm]{geometry}
+\usepackage[english]{babel}
+\usepackage{blindtext}
+% \usepackage[scale=.92]{helvet} -> this fails if I don't set the font type to sans serif. So 
+% this means that you must only import font package if you've configured its type to be used.
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{index}
+
+\makeindex
+
+
+\begin{document}
+    \title{\Large{\textbf{Latex Tutorial}}}
+    \author{By Aminu Mohammed}
+    \date{March 8, 2022}
+    \maketitle
+    \pagenumbering{roman}
+    \fancyhf{}
+    \renewcommand{\headrulewidth}{2pt}
+    \renewcommand{\footrulewidth}{1pt}
+    \fancyhead[LE]{\leftmark}
+    \fancyhead[RO]{\nouppercase{\rightmark}}
+    \fancyfoot[LE,RO]{\thepage}
+    \tableofcontents
+    \chapter{Chapter Name}
+    \blindmathtrue
+    \blindtext[5]
+    \section{A section}
+    \blindtext[2]
+    \section{Another section}
+    \enlargethispage{\baselineskip}
+    \blindtext[3]
+    \blinditemize
+    \blindenumerate
+    \blinddescription
+    % \pagebreak -> stretches to fill the page
+    \newpage
+    \section{Yet Another section}
+    \blindtext[1]
+    \section{This section contains figures}
+    \blindtext[1]
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=8cm]{image.jpeg}
+    \end{figure}
+    \blindtext[2]
+\end{document}
